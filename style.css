@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'HankenGroteskVariableFontWeight';
+    src: url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+}
+
+:root {
+    --Light-slate-blue-background: hsl(252, 100%, 67%);
+    --Light-royal-blue-background: hsl(241, 81%, 54%);
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+    --Container-Width: 600px;
+    --List-Item-Max-Width: calc(calc(var(--Container-Width) / 2) * 0.75);
+    --List-Item-Padding-Left: calc(calc(calc(var(--Container-Width) * 0.5) - var(--List-Item-Max-Width)) * 0.5);
+}
+
+.container {
+    width: var(--Container-Width);
+    margin: auto;
+    display: flex;
+    font-family: HankenGroteskVariableFontWeight;
+    box-shadow: 1px 1px 10px 1px var(--Pale-blue);
+    border-radius: 20px;
+    transform: translateY(20%);
+}
+
+.left-part, .right-part {
+    width: calc(var(--Container-Width) / 2);
+}
+
+.left-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(var(--Light-slate-blue-background), var(--Light-royal-blue-background));
+    border-radius: 20px;
+}
+
+.left-part header {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    color: var(--Light-lavender);
+}
+
+.left-part section {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-image: linear-gradient(var(--Violet-blue-circle),var(--Persian-blue-circle));
+    color: var(--White);
+    text-align: center;
+}
+
+.left-part section .numerator {
+    font-size: 100px;
+    margin: 0;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.left-part section .denominator {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    color: var(--Light-lavender);
+}
+
+.left-part footer {
+    flex-grow: 1;
+}
+
+.left-part footer .first-foot {
+    font-size: 45px;
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--White);
+}
+
+.left-part footer .last-foot {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 900;
+    color: var(--Light-lavender);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.right-part header {
+    padding-left: var(--List-Item-Padding-Left);
+    color: var(--Dark-gray-blue);
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.right-part section ul {
+    list-style-type: none;
+    padding-left: var(--List-Item-Padding-Left);
+}
+
+.right-part section ul li {
+    display: flex;
+    justify-content: space-around;
+    max-width: var(--List-Item-Max-Width);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.right-part section ul li:nth-child(1) {
+    color: var(--Light-red);
+    background-color: hsla(0, 100%, 67% ,0.1);
+}
+
+.right-part section ul li:nth-child(2) {
+    color: var(--Orangey-yellow);
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.right-part section ul li:nth-child(3) {
+    color: var(--Green-teal);
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.right-part section ul li:nth-child(4) {
+    color: var(--Cobalt-blue);
+    background-color: hsla(234, 85%, 45%,0.1);
+}
+
+.right-part section ul li p:nth-child(2) {
+    color: black;
+}
+
+.right-part section ul li p:nth-child(2) span:nth-child(1) {
+    font-weight: 700;
+}
+
+.right-part section ul li p:nth-child(2) span:nth-child(2) {
+    font-weight: 900;
+    color: var(--Light-lavender);
+}
+
+.right-part section ul li>p {
+    display: flex;
+    align-items: center;
+}
+
+.right-part section ul li>p span {
+    padding-left: 5px;
+}
+
+.right-part section ul li:hover {
+    cursor: pointer;
+    background-color: var(--Pale-blue);
+}
+
+.right-part footer {
+    padding-left: var(--List-Item-Padding-Left);
+}
+
+.right-part footer button {
+    width: var(--List-Item-Max-Width);
+    height: 40px;
+    border-radius: 50px;
+    border-color: var(--Dark-gray-blue);
+    background-color: var(--Dark-gray-blue);
+    cursor: pointer;
+    color: var(--Pale-blue);
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+@media (max-width:375px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-part,.right-part {
+        margin: auto;
+    }
+}
